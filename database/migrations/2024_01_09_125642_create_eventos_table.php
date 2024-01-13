@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->text('descricao');
-            $table->date('data_inicio');
-            $table->date('data_fim');
+            $table->string('imagem');
+            $table->string('thumbnail');
+            $table->datetime('data_inicio');
+            $table->datetime('data_fim');
+            $table->integer('dia_unico');
             $table->text('local');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('capacidade');
             $table->float('preco', 8, 2);
             $table->unsignedBigInteger('status_id');

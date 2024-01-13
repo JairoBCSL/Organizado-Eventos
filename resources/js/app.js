@@ -4,8 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
-import { createApp } from 'vue';
+import "./bootstrap";
+import { createApp } from "vue";
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -15,8 +15,16 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import Login from "./components/Login.vue";
+app.component("login-component", Login);
+import Register from "./components/Register.vue";
+app.component("register-component", Register);
+import Email from "./components/Email.vue";
+app.component("email-component", Email);
+import Carroussel from "./components/Carroussel.vue";
+app.component("carroussel-component", Carroussel);
+import SlideShow from "./components/SlideShow.vue";
+app.component("slideshow-component", SlideShow);
 
 /**
  * The following block of code may be used to automatically register your
@@ -36,4 +44,4 @@ app.component('example-component', ExampleComponent);
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
 
-app.mount('#app');
+app.mount("#app");
