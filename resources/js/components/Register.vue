@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 .card-register {
     min-width: 450px;
     min-height: 650px;
@@ -13,6 +13,11 @@
     color: white;
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
+}
+
+.card-tem-login {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .card-body form {
@@ -22,7 +27,7 @@
 
 <template>
     <div>
-        <div class="card card-register ms-3">
+        <div class="card card-register">
             <div class="card-header w-100">Registrar-se</div>
             <div class="card-body w-100">
                 <form

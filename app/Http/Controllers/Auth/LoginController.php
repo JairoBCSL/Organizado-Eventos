@@ -45,7 +45,7 @@ class LoginController extends Controller
     {
         $this->validateLogin($request);
 
-        if(Auth::attempt($request->only('email', 'password'))) {
+        if(Auth::attempt($request->only('email', 'password', 'remember'))) {
             return $this->sendLoginResponse($request);
         }
 

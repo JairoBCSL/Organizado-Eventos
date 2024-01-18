@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 .card-login {
     min-width: 400px;
     min-height: 500px;
@@ -13,6 +13,7 @@
     color: white;
     font-size: 24px;
     font-weight: bold;
+    text-align: center;
 }
 
 .card-login .card-body form {
@@ -28,7 +29,7 @@
 <template>
     <div>
         <div class="card card-login">
-            <div class="card-header w-100">Entrar</div>
+            <div class="card-header w-100">Login</div>
             <div class="card-body w-100">
                 <form
                     method="POST"
@@ -47,7 +48,7 @@
                         <div class="">
                             <input
                                 id="emailLogin"
-                                value="jairoboaz@gmail.co"
+                                value="vitoria@email.com"
                                 type="email"
                                 class="form-control"
                                 name="email"
@@ -122,7 +123,7 @@
 
                     <div class="row mb-3">
                         <div
-                            class="col-md-12 d-flex justify-content-end fw-bold fs-5 mt-2 text-danger"
+                            class="col-md-12 d-flex justify-content-center fw-bold fs-5 mt-2 text-danger"
                         >
                             <span>Esqueceu a senha?&nbsp;&nbsp;</span>
                             <a class="" href="/password/reset">Peça uma nova</a>
@@ -135,7 +136,7 @@
         <div class="card card-nova-conta mt-4">
             <div class="row p-4">
                 <div
-                    class="col-md-12 d-flex justify-content-end fw-bold fs-5 text-danger"
+                    class="col-md-12 d-flex justify-content-center fw-bold fs-5 text-danger"
                 >
                     <span>Ainda não tem conta?&nbsp;&nbsp;</span>
                     <a class="" href="/register">Criar uma conta</a>

@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 .center {
     justify-content: center;
     align-content: center;
@@ -8,6 +8,7 @@
 
 .carroussel {
     display: grid;
+    justify-content: start;
     grid-auto-flow: column;
     gap: 1.2rem;
     overflow-y: auto;
@@ -73,9 +74,9 @@
             style=""
         >
             <div class="foto-card">
-                <img
-                    :src="'/imagens/thumbnail/' + evento.thumbnail + '.jpeg'"
-                />
+                <a :href="'/evento/' + evento.id"
+                    ><img :src="'/storage/' + evento.thumbnail"
+                /></a>
             </div>
             <div class="info-card">
                 <div class="periodo-card">
@@ -127,14 +128,25 @@
                         </div>
                     </div>
                 </div>
-                <div style="width: 210px; height: 120px; padding: 10px">
+                <div class="titulo-grid">
                     <div>
-                        <h5 class="fs-5 fw-bolder">
-                            {{ evento.titulo }}
-                        </h5>
+                        <p class="text-danger m-0">
+                            {{ evento.local.cidade.nome }}
+                        </p>
                     </div>
                     <div>
-                        <p class="text-secondary">{{ evento.local }}</p>
+                        <a
+                            :href="'/evento/' + evento.id"
+                            class="text-decoration-none"
+                            ><h5 class="fs-5 fw-bolder text-dark">
+                                {{ evento.titulo }}
+                            </h5></a
+                        >
+                    </div>
+                    <div>
+                        <p class="text-secondary">
+                            {{ evento.local.nome }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -169,7 +181,6 @@ export default {
             evento.data_inicio = new Date(evento.data_inicio);
             evento.data_fim = new Date(evento.data_fim);
         });
-        console.log(this.eventos);
     },
     methods: {},
 };

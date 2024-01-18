@@ -20,13 +20,15 @@ return new class extends Migration
             $table->datetime('data_inicio');
             $table->datetime('data_fim');
             $table->integer('dia_unico');
-            $table->text('local');
+            $table->unsignedBigInteger('local_id');
+            $table->foreign('local_id')->references('id')->on('local');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('capacidade');
             $table->float('preco', 8, 2);
             $table->unsignedBigInteger('status_id');
             $table->foreign('status_id')->references('id')->on('status');
+            $table->string('qrcode');
             $table->timestamps();
         });
     }
@@ -39,6 +41,7 @@ return new class extends Migration
         Schema::table('evento', function (Blueprint $table) {
             $table->dropForeign('evento_user_id_foreign');
             $table->dropForeign('evento_status_id_foreign');
+            $table->dropForeign('evento_local_id_foreign');
         });
         Schema::dropIfExists('evento');
     }

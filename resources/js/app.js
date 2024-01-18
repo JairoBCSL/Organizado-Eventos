@@ -25,6 +25,24 @@ import Carroussel from "./components/Carroussel.vue";
 app.component("carroussel-component", Carroussel);
 import SlideShow from "./components/SlideShow.vue";
 app.component("slideshow-component", SlideShow);
+import Modal from "./components/Modal.vue";
+app.component("modal-component", Modal);
+import GridEventos from "./components/GridEventos.vue";
+app.component("grid-evento-component", GridEventos);
+import NovoEvento from "./components/NovoEvento.vue";
+app.component("novo-evento-component", NovoEvento);
+import EditarEvento from "./components/EditarEvento.vue";
+app.component("editar-evento-component", EditarEvento);
+import DetalheEvento from "./components/DetalheEvento.vue";
+app.component("detalhe-evento-component", DetalheEvento);
+import NovaInscricao from "./components/NovaInscricao.vue";
+app.component("nova-inscricao-component", NovaInscricao);
+import GridInscricoes from "./components/GridInscricoes.vue";
+app.component("grid-inscricao-component", GridInscricoes);
+import ManageInscricoes from "./components/ManageInscricoes.vue";
+app.component("manage-grid-component", ManageInscricoes);
+import NovoPagamento from "./components/NovoPagamento.vue";
+app.component("novo-pagamento-component", NovoPagamento);
 
 /**
  * The following block of code may be used to automatically register your

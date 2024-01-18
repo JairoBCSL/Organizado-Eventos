@@ -9,6 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Data Range Picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/app.css" />
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -17,7 +24,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body class="d-flex flex-column h-100" style="background-color: #eee;">
-    <div id="app" class="d-flex flex-column h-100">
+    <div id="app" class="d-flex flex-column">
         <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm ">
             <div class="container"><img src="/storage/app/public/imagens/logo.png" alt="">
                 <a class="navbar-brand" href="{{ url('/evento') }}">
@@ -28,17 +35,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
                         @guest
                             <li class="nav-item mx-2">
-                                <a href="#" class="btn btn-outline-dark rounded-pill"><strong>Venda na Propozzito</strong></a>
+                                <a href="/evento/list" class="btn btn-outline-dark rounded-pill"><strong>Venda na Propozzito</strong></a>
                             </li>
                             <li class="nav-item mx-2">
                                 <a class="btn btn-danger rounded-pill" href="{{ route('login') }}">Entrar</a>
@@ -46,7 +46,7 @@
                         @else
                             <ul class="nav nav-pill">
                                 <li class="nav-item">
-                                    <a href="#" class="btn btn-outline-dark rounded-pill"><strong>Venda na Propozzito</strong></a>
+                                    <a href="/evento/list" class="btn btn-outline-dark rounded-pill"><strong>Venda na Propozzito</strong></a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-dark fw-bolder" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -54,15 +54,9 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                        <a class="dropdown-item" href="{{ route('inscricao.list') }}">
                                             Histórico
                                         </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
-
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
